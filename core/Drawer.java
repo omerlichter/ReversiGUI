@@ -1,3 +1,5 @@
+package core;
+
 import java.util.List;
 
 /**
@@ -10,4 +12,5 @@ public interface Drawer {
     void drawPlayerInsertDialog();
     void drawMessage(String message);
     void drawEndOfGame(Cell playerColor);
+    Point getMove();
 }

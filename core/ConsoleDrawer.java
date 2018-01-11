@@ -1,4 +1,7 @@
+package core;
+
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by Omer on 04/01/2018.
@@ -50,9 +53,9 @@ public class ConsoleDrawer implements Drawer {
     public void drawEndOfGame(Cell playerColor) {
         System.out.println("End of the game.");
         if (playerColor == Cell.BLACK) {
-            System.out.println("Player X win!");
+            System.out.println("core.Player X win!");
         } else if (playerColor == Cell.WHITE) {
-            System.out.println("Player O win!");
+            System.out.println("core.Player O win!");
         } else {
             System.out.println("Draw!");
         }
@@ -90,5 +93,14 @@ public class ConsoleDrawer implements Drawer {
     @Override
     public void drawPlayerInsertDialog() {
         System.out.println("Please enter your move row,col: ");
+    }
+
+    @Override
+    public Point getMove() {
+        Scanner reader = new Scanner(System.in);
+        int row = reader.nextInt();
+        int column = reader.nextInt();
+        Point move = new Point(row, column);
+        return move;
     }
 }
