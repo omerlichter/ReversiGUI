@@ -8,6 +8,10 @@ public class Board {
     private int numOfBlackCells;
     private int numOFWhiteCells;
 
+    /**
+     * constructor
+     * @param size size of the board
+     */
     public Board(int size) {
         this.board = new Cell[size][size];
         int halfSize = size / 2;
@@ -27,22 +31,45 @@ public class Board {
         this.numOFWhiteCells = 2;
     }
 
+    /**
+     * get function
+     * @return size of the board
+     */
     public int getSize() {
         return this.board.length;
     }
 
+    /**
+     * get function
+     * @return num of black cells
+     */
     public int getNumOfBlackCells() {
         return this.numOfBlackCells;
     }
 
+    /**
+     * gte function
+     * @return num of white cells
+     */
     public int getNumOFWhiteCells() {
         return this.numOFWhiteCells;
     }
 
+    /**
+     * return the cell status in position
+     * @param pos row and column of the cell
+     * @return cell status
+     */
     public Cell getCellAt(Point pos) {
         return this.board[pos.getRow()][pos.getColumn()];
     }
 
+    /**
+     * set atatus to cell, update num of black and white cells
+     * @param pos row and column of the cell
+     * @param status the satatus to update
+     * @return if succeed
+     */
     public boolean setCellAt(Point pos, Cell status) {
         int row = pos.getRow();
         int column = pos.getColumn();
@@ -50,6 +77,8 @@ public class Board {
                 && column >= 0 && column < this.getSize()) {
             Cell lastCellStatus = this.getCellAt(pos);
             this.board[row][column] = status;
+
+            // update num of black and white cells
             if (lastCellStatus == Cell.BLACK && status == Cell.WHITE) {
                 this.numOFWhiteCells++;
                 this.numOfBlackCells--;

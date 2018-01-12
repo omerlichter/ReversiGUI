@@ -1,0 +1,38 @@
+.root {
+-fx-background-image: url("background.jpg")
+}
+.label {
+-fx-font-size: 20px;
+-fx-font-weight: bold;
+}
+.button {
+ -fx-font-weight: bold;
+ -fx-font-size: 15px;
+ -fx-background-color: #000000, linear-gradient(#FFF032, #FFF464);
+ -fx-background-radius: 8,7,6;
+}
+.combo-box {
+ -fx-font-weight: bold;
+ -fx-font-size: 10px;
+ -fx-background-color: #000000, linear-gradient(#FFF032, #FFF464);
+ -fx-background-radius: 8,7,6;
+}
+#welcomeText {
+-fx-font-size: 30px;
+-fx-font-weight: bold;
+}
+#settingsText {
+-fx-font-size: 30px;
+-fx-font-weight: bold;
+}
+#message {
+-fx-font-size: 12px;
+-fx-fill: #E01616;
+-fx-font-weight: bold;
+}
+
+#board {
+-fx-border-color: black;
+-fx-border-insets: 5;
+-fx-border-width: 3;
+}

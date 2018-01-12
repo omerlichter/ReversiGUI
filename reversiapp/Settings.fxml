@@ -1,0 +1,48 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.String?>
+<GridPane xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="reversiapp.SettingsController" alignment="TOP_CENTER"
+          hgap="10" vgap="100">
+    <padding><Insets top="25" right="25" bottom="10"
+                     left="25"></Insets></padding>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Text text="Settings:" id="settingsText"
+              GridPane.rowIndex="0" GridPane.columnIndex="0"
+              GridPane.columnSpan="2"/>
+    </HBox>
+
+    <VBox spacing="10"
+          GridPane.rowIndex="1" GridPane.columnIndex="0">
+
+        <HBox spacing="10">
+            <Text text="Open Player:"/>
+            <ComboBox fx:id="startPlayerComboBox"/>
+        </HBox>
+
+        <HBox spacing="10">
+            <Text text="O Player Color:"/>
+            <ComboBox fx:id="playerOColorComboBox"/>
+        </HBox>
+
+        <HBox spacing="10">
+            <Text text="X Player Color:"/>
+            <ComboBox fx:id="playerXColorComboBox"/>
+        </HBox>
+
+        <HBox spacing="10">
+            <Text text="Board Size:"/>
+            <ComboBox fx:id="boardSizeComboBox"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="BOTTOM_RIGHT">
+            <Button fx:id="backToMenu" text="Back To Menu" onAction="#backToMenu"/>
+            <Button fx:id="saveButton" text="Save" onAction="#save"/>
+        </HBox>
+    </VBox>
+</GridPane>

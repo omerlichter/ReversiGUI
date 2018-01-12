@@ -8,23 +8,30 @@ import java.util.Scanner;
  */
 public class LocalPlayer extends Player {
 
+    /**
+     * constructor
+     * @param drawer drawer
+     * @param playerColor player color
+     */
     public LocalPlayer(Drawer drawer, Cell playerColor) {
         super(drawer, playerColor);
     }
 
+    /**
+     * choose move, and return it
+     * @param points list of moves
+     * @param logic logic of the game
+     * @param board board of the game
+     * @return the move
+     */
     @Override
     public Point chooseMove(List<Point> points, Logic logic, Board board) {
 
         Point move;
 
         if (points.size() == 0) {
-            drawer.drawMessage("No possible moves. Play passes back to the other player.");
             return null;
         }
-
-        // draw
-        this.drawer.drawPlayerMoveTitle(this.playerColor);
-        this.drawer.drawPossibleMovesTitle(points);
 
         boolean validPoint;
 
@@ -42,7 +49,7 @@ public class LocalPlayer extends Player {
         }
 
         if (validPoint == false) {
-            this.drawer.drawMessage("not Valid core.Point");
+            this.drawer.drawMessage("not Valid Point");
             return new Point(-1, -1);
         }
 

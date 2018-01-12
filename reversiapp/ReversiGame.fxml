@@ -7,20 +7,37 @@
 
 <HBox xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="reversiapp.ReversiGameController" fx:id="root" spacing="10">
-    <VBox spacing="10">
-        <HBox spacing="5">
-            <Text text="Current player:"></Text>
-            <Text fx:id="currentPlayer" text=""></Text>
-        </HBox>
+    <padding><Insets top="10" right="10" bottom="10"
+                     left="10"></Insets></padding>
 
-        <HBox spacing="5">
-            <Text text="Black player score:"></Text>
-            <Text fx:id="blackPlayerScore" text=""></Text>
-        </HBox>
+    <BorderPane>
+        <top>
+            <VBox spacing="10">
+                <HBox spacing="5">
+                    <Text text="Current player:"></Text>
+                    <Text fx:id="currentPlayer" text=""></Text>
+                </HBox>
 
-        <HBox spacing="5">
-            <Text text="White player score:"></Text>
-            <Text fx:id="whitePlayerScore" text=""></Text>
-        </HBox>
-    </VBox>
+                <HBox spacing="5">
+                    <Text text="Black player score:"></Text>
+                    <Text fx:id="blackPlayerScore" text=""></Text>
+                </HBox>
+
+                <HBox spacing="5">
+                    <Text text="White player score:"></Text>
+                    <Text fx:id="whitePlayerScore" text=""></Text>
+                </HBox>
+
+                <Text fx:id="message" text=""></Text>
+            </VBox>
+        </top>
+
+        <bottom>
+            <HBox>
+                <Button fx:id="backToMenuButton" text="Back To Menu"
+                        alignment="CENTER"
+                        onAction="#backToMenu"/>
+            </HBox>
+        </bottom>
+    </BorderPane>
 </HBox>
